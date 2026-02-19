@@ -120,10 +120,3 @@ I am actively developing expertise in **Data Engineering, Analytics, and Data Sc
 I am passionate about transforming raw data into structured, meaningful insights that drive measurable impact.
 
 ---
-
-If you'd like, I can now:
-
-* Make it even more technical (for data engineering roles)
-* Make a shorter version optimized for recruiters scanning quickly
-* Or tailor it specifically for a Data Engineering internship or junior role 🎯
-
