@@ -1,92 +1,129 @@
-# Data Warehouse and Analytics Project
+# 📊 Data Warehouse & Analytics Engineering Project
 
-Hey there! Welcome to the Data Warehouse and Analytics Project repository! 🚀
-This project demonstrates a comprehensive data warehousing and analytics solution, from building a data warehouse to generating actionable insights. Designed as a portfolio project, it highlights industry best practices in data engineering and analytics.
+This repository showcases an end-to-end **Data Warehouse and Analytics solution**, demonstrating practical experience in **Data Engineering, Data Analytics, and Data Science workflows**.
 
-# 🏗️ Data Architecture
-The data architecture for this project follows Medallion Architecture Bronze, Silver, and Gold layers: Data Architecture
+The project highlights my ability to design scalable data systems, build ETL pipelines, model analytical datasets, and generate business-ready insights using SQL Server.
+
+---
+
+# 🚀 Project Summary
+
+This project simulates a real-world business environment where data from multiple operational systems must be consolidated into a centralized warehouse for reporting and analytics.
+
+### Key Objectives:
+
+* Design and implement a modern data warehouse
+* Build structured ETL pipelines
+* Apply data cleaning and transformation best practices
+* Develop optimized star schema models
+* Generate actionable business insights through SQL analytics
+
+---
+
+# 🏗️ Architecture Overview
+
+The solution follows the **Medallion Architecture (Bronze → Silver → Gold)** framework.
 <img width="1763" height="1186" alt="image" src="https://github.com/user-attachments/assets/9820f5e4-c01a-45f2-b935-428ae6edc588" />
 
+## 🥉 Bronze Layer – Raw Ingestion
 
-**Bronze Layer:** Stores raw data as-is from the source systems. Data is ingested from CSV Files into SQL Server Database.
+* Ingested ERP and CRM CSV data into SQL Server
+* Preserved raw structure for auditability and traceability
 
-**Silver Layer:** This layer includes data cleansing, standardization, and normalization processes to prepare data for analysis.
+## 🥈 Silver Layer – Data Transformation
 
-**Gold Layer:** Houses business-ready data modeled into a star schema required for reporting and analytics.
+* Data cleansing and validation
+* Standardization and normalization
+* Business rule implementation
 
-# 📖 Project Overview
-This project involves:
-Data Architecture: Designing a Modern Data Warehouse Using Medallion Architecture Bronze, Silver, and Gold layers.
-ETL Pipelines: Extracting, transforming, and loading data from source systems into the warehouse.
-Data Modeling: Developing fact and dimension tables optimized for analytical queries.
-Analytics & Reporting: Creating SQL-based reports and dashboards for actionable insights.
-🎯 This repository showcases my expertise in:
+## 🥇 Gold Layer – Analytics Layer
 
-SQL Development
-Data Architect
-Data Engineering
-ETL Pipeline Developer
-Data Modeling
-Data Analytics
-🛠️ Important Links & Tools:
-Everything is for Free!
+* Designed star schema (fact & dimension tables)
+* Optimized for reporting and analytical queries
+* Enabled high-performance aggregations
 
-Datasets: Access to the project dataset (csv files).
-SQL Server Express: Lightweight server for hosting your SQL database.
-SQL Server Management Studio (SSMS): GUI for managing and interacting with databases.
-Git Repository: Set up a GitHub account and repository to manage, version, and collaborate on your code efficiently.
-DrawIO: Design data architecture, models, flows, and diagrams.
-Notion: Get the Project Template from Notion
-Notion Project Steps: Access to All Project Phases and Tasks.
-🚀 Project Requirements
-Building the Data Warehouse (Data Engineering)
-Objective
-Develop a modern data warehouse using SQL Server to consolidate sales data, enabling analytical reporting and informed decision-making.
+---
 
-Specifications
-Data Sources: Import data from two source systems (ERP and CRM) provided as CSV files.
-Data Quality: Cleanse and resolve data quality issues prior to analysis.
-Integration: Combine both sources into a single, user-friendly data model designed for analytical queries.
-Scope: Focus on the latest dataset only; historization of data is not required.
-Documentation: Provide clear documentation of the data model to support both business stakeholders and analytics teams.
-BI: Analytics & Reporting (Data Analysis)
-Objective
-Develop SQL-based analytics to deliver detailed insights into:
+# 🛠️ Technologies Used
 
-Customer Behavior
-Product Performance
-Sales Trends
-These insights empower stakeholders with key business metrics, enabling strategic decision-making.
+* SQL Server Express
+* SQL Server Management Studio (SSMS)
+* SQL (Advanced Queries, Joins, Aggregations, CTEs)
+* Draw.io (Architecture & Data Modeling)
+* Git & GitHub (Version Control)
 
-For more details, refer to docs/requirements.md.
+---
 
-📂 Repository Structure
+# 🎯 Core Competencies Demonstrated
+
+* Data Warehousing Architecture
+* ETL Pipeline Development
+* Data Modeling (Star Schema Design)
+* Data Cleaning & Transformation
+* Analytical Query Optimization
+* Business Intelligence Reporting
+* Data Quality Validation
+
+---
+
+# 📊 Business Insights Delivered
+
+Using structured SQL analytics, this project generates insights into:
+
+* Customer purchasing behavior
+* Product performance analysis
+* Sales trends and revenue patterns
+* Key business performance indicators
+
+These outputs demonstrate the ability to translate raw operational data into decision-support insights.
+
+---
+
+# 📂 Repository Structure
+
+```
 data-warehouse-project/
 │
-├── datasets/                           # Raw datasets used for the project (ERP and CRM data)
+├── datasets/                 # ERP & CRM raw datasets
+├── docs/                     # Architecture & documentation
+├── scripts/
+│   ├── bronze/               # Raw ingestion scripts
+│   ├── silver/               # Cleaning & transformation logic
+│   ├── gold/                 # Star schema & analytical models
 │
-├── docs/                               # Project documentation and architecture details
-│   ├── etl.drawio                      # Draw.io file shows all different techniquies and methods of ETL
-│   ├── data_architecture.drawio        # Draw.io file shows the project's architecture
-│   ├── data_catalog.md                 # Catalog of datasets, including field descriptions and metadata
-│   ├── data_flow.drawio                # Draw.io file for the data flow diagram
-│   ├── data_models.drawio              # Draw.io file for data models (star schema)
-│   ├── naming-conventions.md           # Consistent naming guidelines for tables, columns, and files
-│
-├── scripts/                            # SQL scripts for ETL and transformations
-│   ├── bronze/                         # Scripts for extracting and loading raw data
-│   ├── silver/                         # Scripts for cleaning and transforming data
-│   ├── gold/                           # Scripts for creating analytical models
-│
-├── tests/                              # Test scripts and quality files
-│
-├── README.md                           # Project overview and instructions
-├── LICENSE                             # License information for the repository
-├── .gitignore                          # Files and directories to be ignored by Git
-└── requirements.txt                    # Dependencies and requirements for the project
+├── tests/                    # Data validation scripts
+├── README.md                 
+├── LICENSE                   
+└── requirements.txt          
+```
 
-🛡️ License
-This project is licensed under the MIT License. You are free to use, modify, and share this project with proper attribution.
+---
 
-🌟 About Me
-Hi there! I'm Charity Cheruto, and im learning this just as much as you. Lets learn together. 
+# 📈 Professional Growth
+
+This project represents my continued growth in:
+
+* Data Engineering
+* Analytics Engineering
+* Data Science Foundations
+
+By building complete data systems from ingestion to insight generation, I am strengthening my ability to design scalable data solutions that support business strategy and data-driven decision-making.
+
+---
+
+# 👩🏽‍💻 About Me
+
+Hi, I’m **Charity Cheruto**.
+
+I am actively developing expertise in **Data Engineering, Analytics, and Data Science**, focusing on building production-style projects that simulate real industry environments.
+
+I am passionate about transforming raw data into structured, meaningful insights that drive measurable impact.
+
+---
+
+If you'd like, I can now:
+
+* Make it even more technical (for data engineering roles)
+* Make a shorter version optimized for recruiters scanning quickly
+* Or tailor it specifically for a Data Engineering internship or junior role 🎯
+
