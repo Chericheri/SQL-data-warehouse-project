@@ -23,6 +23,7 @@ This project simulates a real-world business environment where data from two ope
 ## 🏗️ Architecture Overview
 
 The solution follows the **Medallion Architecture (Bronze → Silver → Gold)** framework.
+<img width="1504" height="859" alt="image" src="https://github.com/user-attachments/assets/73483f7a-3fa7-412e-899a-c5ac402ac87c" />
 
 ```
 CSV Source Files (CRM + ERP)
