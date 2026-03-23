@@ -23,7 +23,8 @@ This project simulates a real-world business environment where data from multipl
 # 🏗️ Architecture Overview
 
 The solution follows the **Medallion Architecture (Bronze → Silver → Gold)** framework.
-<img width="1763" height="1186" alt="image" src="https://github.com/user-attachments/assets/9820f5e4-c01a-45f2-b935-428ae6edc588" />
+<img width="1504" height="859" alt="image" src="https://github.com/user-attachments/assets/73483f7a-3fa7-412e-899a-c5ac402ac87c" />
+
 
 ## 🥉 Bronze Layer – Raw Ingestion
 
