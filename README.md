@@ -110,7 +110,7 @@ Connected directly to the MySQL Gold layer via ODBC. The dashboard tells the ful
 
 Revenue dropped **18% in 2012** then exploded **+180% in 2013** — from $5.8M to $16.3M in a single year.
 
-![Sales Trends](docs/screenshots/page2_sales_trends.png)
+![Sales Trends](docs/page2_sales_trends.png)
 
 ---
 
