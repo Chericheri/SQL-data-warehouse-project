@@ -1,14 +1,14 @@
 # 📊 Data Warehouse & Analytics Engineering Project
 
-This repository showcases an end-to-end **Data Warehouse and Analytics solution**, demonstrating practical experience in **Data Engineering, Analytics Engineering, and Business Intelligence workflows**.
-
-The project highlights my ability to design scalable data systems, build ETL pipelines, model analytical datasets, and generate business-ready insights using **MySQL**.
-
+ThiThis repository showcases an end-to-end Data Warehouse and Analytics solution, demonstrating practical experience in Data Engineering, Analytics Engineering, and Business Intelligence workflows.
+The project highlights my ability to design scalable data systems, build ETL pipelines, model analytical datasets, generate business-ready insights using MySQL, and visualise findings in Power BI.
 ---
 
 ## 🚀 Project Summary
 
 This project simulates a real-world business environment where data from two operational source systems — a **CRM** and an **ERP** — must be consolidated into a centralised warehouse for reporting and analytics.
+Dataset: AdventureWorks (Microsoft) — fictional global bike company
+Tutorial credit: Data With Baraa
 
 ### Key Objectives
 
@@ -17,6 +17,7 @@ This project simulates a real-world business environment where data from two ope
 - Apply data cleaning and transformation best practices across 6 source tables
 - Develop an optimised Star Schema model for analytics consumption
 - Generate actionable business insights through SQL analytics
+- Build an interactive Power BI dashboard connected directly to the warehouse
 
 ---
 
