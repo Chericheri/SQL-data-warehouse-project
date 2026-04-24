@@ -1,6 +1,6 @@
 # 📊 Data Warehouse & Analytics Engineering Project
-
-ThiThis repository showcases an end-to-end Data Warehouse and Analytics solution, demonstrating practical experience in Data Engineering, Analytics Engineering, and Business Intelligence workflows.
+---
+This repository showcases an end-to-end Data Warehouse and Analytics solution, demonstrating practical experience in Data Engineering, Analytics Engineering, and Business Intelligence workflows.
 The project highlights my ability to design scalable data systems, build ETL pipelines, model analytical datasets, generate business-ready insights using MySQL, and visualise findings in Power BI.
 ---
 
@@ -60,72 +60,78 @@ CSV Source Files (CRM + ERP)
 
 ---
 
-## 🗂️ Data Model
-
-The Gold layer follows a **Star Schema** pattern:
-
-```
+### 🗂️ Data Model
+The Gold layer follows a Star Schema pattern:
 gold_dim_customers (1) ──────── (Many) gold_fact_sales
-                                        │
+                                              │
 gold_dim_products  (1) ──────── (Many) gold_fact_sales
-```
+TableTypeRowsPrimary Keygold_dim_customersDimension18,484customer_key (surrogate)gold_dim_productsDimension295product_key (surrogate)gold_fact_salesFact60,398product_key + customer_key (FK)
 
-| Table | Type | Rows | Primary Key |
-|---|---|---|---|
-| `gold_dim_customers` | Dimension | ~18,484 | `customer_key` (surrogate) |
-| `gold_dim_products` | Dimension | ~295 | `product_key` (surrogate) |
-| `gold_fact_sales` | Fact | ~60,398 | `product_key` + `customer_key` (FK) |
+📊 Power BI Dashboard
+Connected directly to the MySQL Gold layer via ODBC. The dashboard tells the full business story across 4 interactive pages with DAX measures and cross-page slicers.
+Key metrics:
+MetricValue💰 Total Revenue$29,356,250👥 Total Customers18,484📦 Total Orders27,659🛍️ Avg Order Value$486💳 Revenue Per Customer$1,588
 
----
+Page 1 — Executive Overview
 
-## 🛠️ Technologies Used
+The full picture at a glance
 
-| Technology | Purpose |
-|---|---|
-| **MySQL 8.0** | Database engine |
-| **MySQL Workbench** | Query development and execution |
-| **SQL** | ETL pipelines, transformations, analytics |
-| **Draw.io** | Architecture and data model diagrams |
-| **Git & GitHub** | Version control |
+Show Image
 
----
+Page 2 — Sales Trends
 
-## 🎯 Core Competencies Demonstrated
+When did growth happen?
 
-- Data Warehousing Architecture (Medallion / Bronze-Silver-Gold)
-- ETL Pipeline Development with stored procedures
-- Data Modelling (Star Schema design)
-- Data Cleaning and Transformation (12+ transformation types)
-- Window Functions (`ROW_NUMBER`, `LEAD`)
-- Data Integration across multiple source systems
-- Data Quality Validation and testing
-- Business Intelligence Reporting
+Revenue dropped 18% in 2012 then exploded +180% in 2013 — from $5.8M to $16.3M in a single year.
+Show Image
 
----
+Page 3 — Customer Insights
 
-## 📊 Business Insights Enabled
+Who is buying?
 
-The Gold layer enables structured SQL analytics across:
+The US has 40.5% of all customers but Australia spends the most per order at $678 — 50% more than a US customer.
+Show Image
 
-- Customer purchasing behaviour and demographics
-- Product performance by category, subcategory and product line
-- Sales trends, revenue patterns and order analysis
-- Geographic sales distribution by country
-- Key business performance indicators
+Page 4 — Product Performance
 
----
+What is selling?
 
-## 📂 Repository Structure
+Bikes generate 96.5% of all revenue. The Mountain-200 series holds every single top 5 product slot.
+Show Image
 
-```
-sql-data-warehouse-project/
+🔍 Key Business Findings
+FindingInsight🚲 Revenue concentrationBikes = 96.5% of $29.4M. Accessories and Clothing barely register⛰️ Hero productMountain-200 series dominates all top 5 revenue positions🌏 Geographic insightUS has most customers but Australia spends $678/order vs US at $448📈 2013 mysteryRevenue exploded +180% in 2013 — the data shows WHAT, not WHY📅 SeasonalityDecember is always peak. January–February are consistently weakest👥 DemographicsNear-perfect gender split: 50.5% Male / 49.4% Female
+
+🛠️ Technologies Used
+TechnologyPurposeMySQL 8.0Database engineMySQL WorkbenchQuery development and executionSQLETL pipelines, transformations, EDA analyticsPower BI DesktopInteractive dashboard and data visualisationDAXCalculated measures in Power BIMySQL ODBC ConnectorPower BI to MySQL connectionGit & GitHubVersion control
+
+🎯 Core Competencies Demonstrated
+
+Data Warehousing Architecture (Medallion / Bronze-Silver-Gold)
+ETL Pipeline Development with stored procedures and error handling
+Data Modelling (Star Schema design)
+Data Cleaning and Transformation (13 transformation types)
+Window Functions (ROW_NUMBER, LEAD)
+Data Integration across multiple source systems
+Data Quality Validation and testing
+Exploratory Data Analysis (EDA) with SQL
+Business Intelligence Reporting with Power BI and DAX
+
+
+📂 Repository Structure
+SQL-data-warehouse-project/
 │
 ├── datasets/
 │   ├── source_crm/           # CRM CSV files (cust_info, prd_info, sales_details)
 │   └── source_erp/           # ERP CSV files (CUST_AZ12, LOC_A101, PX_CAT_G1V2)
 │
 ├── docs/
-│   └── data_catalog.md       # Full Gold layer data catalog
+│   ├── data_catalog.md       # Full Gold layer data catalog
+│   └── screenshots/          # Dashboard page screenshots
+│       ├── page1_executive_overview.png
+│       ├── page2_sales_trends.png
+│       ├── page3_customer_insights.png
+│       └── page4_product_performance.png
 │
 ├── scripts/
 │   ├── bronze/
@@ -141,46 +147,62 @@ sql-data-warehouse-project/
 │   ├── quality_checks_silver.sql  # Data quality validation for Silver layer
 │   └── quality_checks_gold.sql    # Data quality validation for Gold layer
 │
+├── powerbi/
+│   └── GlobalBikeSales_Dashboard.pbix  # Power BI dashboard file
+│
 ├── README.md
 └── LICENSE
-```
 
----
+▶️ How to Run
+Database Setup
 
-## ▶️ How to Run
+Install MySQL 8.0 and MySQL Workbench
+Create the database: CREATE DATABASE DataWarehouse;
 
-1. Install **MySQL 8.0** and **MySQL Workbench**
-2. Create the database: `CREATE DATABASE DataWarehouse;`
-3. Run `scripts/bronze/ddl_bronze.sql` to create Bronze tables
-4. Copy all 6 CSV files to your MySQL upload folder (`C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/`)
-5. Run `scripts/bronze/proc_load_bronze.sql` — then call `CALL load_bronze();` followed by the LOAD DATA section
-6. Run `scripts/silver/ddl_silver.sql` to create Silver tables
-7. Run `scripts/silver/proc_load_silver.sql` — then call `CALL load_silver();`
-8. Run `scripts/gold/ddl_gold.sql` to create Gold views
-9. Run `tests/quality_checks_gold.sql` to validate everything
+Bronze Layer
 
----
+Run scripts/bronze/ddl_bronze.sql to create Bronze tables
+Copy all 6 CSV files to your MySQL upload folder:
 
-## 📈 Professional Growth
+C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/
 
-This project represents my continued growth in:
+Run scripts/bronze/proc_load_bronze.sql then call CALL load_bronze();
 
-- Data Engineering — building production-style ETL pipelines
-- Analytics Engineering — designing clean, business-ready data models
-- Data Science Foundations — enabling SQL-based analytical workflows
+Silver Layer
 
-By building a complete data system from raw ingestion to a Star Schema ready for Power BI or dashboards, I am strengthening my ability to design scalable data solutions that support business strategy and data-driven decision-making.
+Run scripts/silver/ddl_silver.sql to create Silver tables
+Run scripts/silver/proc_load_silver.sql then call CALL load_silver();
 
----
+Gold Layer
 
-## 👩🏽‍💻 About Me
+Run scripts/gold/ddl_gold.sql to create Gold views
 
-Hi, I'm **Charity Cheruto**.
+Validation
 
-I am actively developing expertise in **Data Engineering, Analytics Engineering, and Data Science**, focusing on building production-style projects that simulate real industry environments.
+Run tests/quality_checks_silver.sql
+Run tests/quality_checks_gold.sql
 
-I am passionate about transforming raw data into structured, meaningful insights that drive measurable impact.
+Power BI Dashboard
 
----
+Install the MySQL ODBC Connector
+Open powerbi/GlobalBikeSales_Dashboard.pbix in Power BI Desktop
+Update connection: Server = localhost, Database = datawarehouse
+Enter credentials: User = root, Password = your MySQL password
 
-*Built with MySQL · Medallion Architecture · Star Schema*
+
+📈 Professional Growth
+This project represents my continued growth across the full data stack:
+
+Data Engineering — production-style ETL pipelines with stored procedures
+Analytics Engineering — clean, business-ready Star Schema models
+Business Intelligence — interactive Power BI dashboards that tell a story
+Data Science Foundations — SQL and BI analytics workflows
+
+
+👩🏽‍💻 About Me
+Hi, I'm Charity Cheruto — a Data Scientist and DevOps Engineer based in Nairobi, Kenya.
+I am actively developing expertise in Data Engineering, Analytics Engineering, and Data Science, focusing on building production-style projects that simulate real industry environments.
+📎 LinkedIn
+💻 GitHub
+
+Built with MySQL · Power BI · Medallion Architecture · Star Schema · DAX
