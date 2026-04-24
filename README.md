@@ -101,7 +101,7 @@ Connected directly to the MySQL Gold layer via ODBC. The dashboard tells the ful
 ### Page 1 — Executive Overview
 > The full picture at a glance
 
-![Executive Overview](docs/screenshots/page1_executive_overview.png)
+![Executive Overview](docs/Screenshots 2026-04-24 030610.png)
 
 ---
 
