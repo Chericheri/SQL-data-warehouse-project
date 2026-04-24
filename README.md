@@ -101,7 +101,7 @@ Connected directly to the MySQL Gold layer via ODBC. The dashboard tells the ful
 ### Page 1 — Executive Overview
 > The full picture at a glance
 
-![Executive Overview](docs/Screenshot 2026-04-24 030610.png)
+![Executive Overview](docs/page1_executive_overview.png)
 
 ---
 
@@ -119,7 +119,7 @@ Revenue dropped **18% in 2012** then exploded **+180% in 2013** — from $5.8M t
 
 The US has **40.5%** of all customers but **Australia spends the most per order at $678** — 50% more than a US customer.
 
-![Customer Insights](docs/screenshots/page3_customer_insights.png)
+![Customer Insights](docs/page3_customer_insights.png)
 
 ---
 
@@ -128,7 +128,7 @@ The US has **40.5%** of all customers but **Australia spends the most per order 
 
 **Bikes generate 96.5% of all revenue.** The Mountain-200 series holds every single top 5 product slot.
 
-![Product Performance](docs/screenshots/page4_product_performance.png)
+![Product Performance](docs/page4_product_performance.png)
 
 ---
 
